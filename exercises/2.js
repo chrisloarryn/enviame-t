@@ -41,7 +41,7 @@ const jsonData = json.data
 
 const keys = Object.keys(jsonData)
 
-const keysResult = keys.map((el) => {
+keys.map((el) => {
   const { limit, over_carrier_service_id, under_carrier_service_id } = jsonData[
     el
   ]
