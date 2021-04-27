@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useHeroes } from 'hooks/useHeroes'
 import getSingleHero from 'services/getSingleHero'
+import { HeroI } from 'types/globals'
 
 export default function useSingleGif({ id }) {
   const { heroes } = useHeroes()
   const heroFromCache = heroes.find((singleHero) => singleHero.id === id)
 
-  const [hero, setHero] = useState(heroFromCache)
+  const [hero, setHero] = useState<HeroI>(heroFromCache)
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
 

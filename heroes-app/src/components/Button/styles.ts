@@ -7,12 +7,16 @@ const SIZES = {
   large: '3rem'
 }
 
-interface GetFontSizeProps {
-  _size: any // | keyof typeof SIZES 
+type GetFontSizeProps = {
+  _size?: "small" | "medium" | "large" // keyof typeof SIZES
 }
 
 const getFontSize = ({ _size = 'small' }: GetFontSizeProps) => {
-  const size = SIZES[_size]
+  let size
+  if (_size) {
+    const key = _size
+    size = SIZES[key]
+  }
   if (!size) {
     console.warn(`[Button Styled Component] This size is not correct. Use ${Object.keys(SIZES).join(', ')}`)
     return SIZES.small

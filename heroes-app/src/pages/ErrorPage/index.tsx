@@ -1,5 +1,5 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-/** @jsxFrag React.Fragment */
 import SearchForm from 'components/SearchForm'
 import { Helmet } from 'react-helmet'
 import Button from 'components/Button'
@@ -51,7 +51,7 @@ const ErrorPage = () => {
   }
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>Error 404 | Giffy</title>
       </Helmet>
@@ -68,7 +68,7 @@ const ErrorPage = () => {
           <Button href='/'>Go back home</Button>
         </div>
       </div>
-    </>
+    </React.Fragment>
   )
 }
 

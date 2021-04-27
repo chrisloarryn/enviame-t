@@ -1,14 +1,14 @@
 import React, { createContext, Dispatch, FC, SetStateAction, useState } from 'react'
 import { HeroI } from 'types/globals'
 
-// interface ContextType {
-//   heroes: HeroI[]
-//   setHeroes: unknown | Dispatch<SetStateAction<HeroI[]>>
-// }
+interface ContextType {
+  heroes: HeroI[],
+  setHeroes: Dispatch<SetStateAction<HeroI[]>>
+}
 
-export const HeroesContext = createContext({
+export const HeroesContext = createContext<ContextType>({
   heroes: [],
-  setHeroes: (_value: HeroI[]) => console.log()
+  setHeroes: () => {}
 })
 
 export const HeroesContextProvider: FC = ({ children }) => {
