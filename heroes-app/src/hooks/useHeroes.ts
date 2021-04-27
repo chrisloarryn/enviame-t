@@ -5,14 +5,14 @@ import { HeroI } from 'types/globals'
 
 const INITIAL_PAGE = 0
 
-export function useHeroes ({ keyword } = { keyword: null }) {
+export function useHeroes ({ keyword } = { keyword: 'captain' }) {
   const [loading, setLoading] = useState(false)
   const [loadingNextPage, setLoadingNextPage] = useState(false)
 
   const [page, setPage] = useState(INITIAL_PAGE)
   const {heroes, setHeroes} = useContext(HeroesContext)
 
-  // recuperamos la keyword del localStorage
+  // get keyword from localStorage
   const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'avengers'
 
   useEffect(function () {
@@ -22,7 +22,7 @@ export function useHeroes ({ keyword } = { keyword: null }) {
       .then(heroes => {
         setHeroes(heroes)
         setLoading(false)
-        // guardamos la keyword en el localStorage
+        // save it in localStorage
         localStorage.setItem('lastKeyword', keyword)
       })
   }, [keyword, keywordToUse, setHeroes])
