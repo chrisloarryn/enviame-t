@@ -22,7 +22,9 @@ const Hero: FC<HeroProps> = ({ title, id, url, description, modified }) => {
   return (
     <div className='Hero'>
       <Link to={`/hero/${id}`} className='Hero-link'>
-        <h3>{title}<span>{date}</span></h3>
+        <h3>
+          {title} <hr /> <span>{date}</span>
+        </h3>
         <img loading='lazy' alt={title} src={url} />
         <h4>{cleanText}</h4>
       </Link>
