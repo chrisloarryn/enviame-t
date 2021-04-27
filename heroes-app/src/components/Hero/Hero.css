@@ -1,0 +1,144 @@
+.Hero {
+  --heroShadow-size : var(--gridList-gap, 6px);
+  margin-bottom: .5em;
+  position: relative;
+}
+
+.Hero-buttons {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
+
+.Hero-link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+}
+
+.Hero h3 {
+  background: rgba(0, 0, 0, .3);
+  top: 0;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  position: absolute;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Hero h4 {
+  background: rgba(0, 0, 0, .3);
+  bottom: 0;
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+  max-height: 35%;
+  overflow:var(--heroShadow-size);
+  position: absolute;
+}
+
+.Hero img {
+  width: 100%;
+  object-fit: contain;
+  vertical-align: top;
+}
+
+i {
+  font-size: 80px;
+}
+
+.Hero {
+  margin-bottom: 0;
+}
+
+.Hero, .Hero-link {
+  height: 100%;
+}
+.Hero-link img {
+  height: inherit;
+  object-fit: cover;
+}
+
+.Hero:nth-child(5n + 1) img {
+  background-color: var(--brand-color_1);
+}
+.Hero:nth-child(5n + 2) img {
+  background-color: var(--brand-color_2);
+}
+.Hero:nth-child(5n + 3) img {
+  background-color: var(--brand-color_3);
+}
+.Hero:nth-child(5n + 4) img {
+  background-color: var(--brand-color_4);
+}
+.Hero:nth-child(5n + 5) img {
+  background-color: var(--brand-color_5);
+}
+
+.Hero:hover:nth-child(5n + 1) {
+  box-shadow: 0 0 0 var(--heroShadow-size) var(--brand-color_1);
+}
+.Hero:hover:nth-child(5n + 2) {
+  box-shadow: 0 0 0 var(--heroShadow-size) var(--brand-color_2);
+}
+.Hero:hover:nth-child(5n + 3) {
+  box-shadow: 0 0 0 var(--heroShadow-size) var(--brand-color_3);
+}
+.Hero:hover:nth-child(5n + 4) {
+  box-shadow: 0 0 0 var(--heroShadow-size) var(--brand-color_4);
+}
+.Hero:hover:nth-child(5n + 5) {
+  box-shadow: 0 0 0 var(--heroShadow-size) var(--brand-color_5);
+}
+
+.Hero:hover:nth-child(5n + 1) h4 {
+	background-color: var(--brand-color_1);
+	color: var(--theme-body-bg);
+}
+.Hero:hover:nth-child(5n + 2) h4 {
+	background-color: var(--brand-color_2);
+	color: var(--theme-body-bg);
+}
+.Hero:hover:nth-child(5n + 3) h4 {
+	background-color: var(--brand-color_3);
+	color: white;
+}
+.Hero:hover:nth-child(5n + 4) h4 {
+	background-color: var(--brand-color_4);
+	color: white;
+}
+.Hero:hover:nth-child(5n + 5) h4 {
+	background-color: var(--brand-color_5);
+	color: var(--theme-body-bg);
+}
+
+.Hero:nth-child(11n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.Hero:nth-child(8n+1) {
+	grid-column-end: span 2;
+	grid-row-end: span 2;
+}
+
+.Hero:nth-child(10n + 3) {
+	grid-column: span 2;
+	grid-row: span 1;
+}
+
+@media screen and (max-width: 45rem)
+{
+  .Hero:nth-child(11n + 1),
+  .Hero:nth-child(8n+1),
+  .Hero:nth-child(10n + 3) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+}
