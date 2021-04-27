@@ -13,7 +13,7 @@ const getDateInFormat = (date: Date): string => {
     day = today.getDate()
   const paddedMonth = `${month}`.padStart(2, '0'),
     paddedDay = `${day}`.padStart(2, '0')
-  return `${year}-${paddedMonth}-${paddedDay}`
+  return `${paddedDay}-${paddedMonth}-${year}`
 }
 
 const Hero: FC<HeroProps> = ({ title, id, url, description, modified }) => {
