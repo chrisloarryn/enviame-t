@@ -17,7 +17,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ initialKeyword = '' }) => {
 
   const onSubmit = ({ keyword }) => {
     if (keyword !== '') {
-      // navegar a otra ruta
+      // navigate to other route
       pushLocation(`/search/${keyword}`)
     }
   }
@@ -36,7 +36,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ initialKeyword = '' }) => {
       <Button>Buscar</Button>
       <input
         className={css['c-search-input']}
-        placeholder='Search a gif here...'
+        placeholder='Search a hero here...'
         onChange={handleChange}
         type='text'
         value={keyword}
